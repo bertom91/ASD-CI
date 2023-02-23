@@ -8,6 +8,9 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+      - name: check event
+        run: echo github.event_name
+        run: echo "$EVENT"
       - name: if-push
         if: ${{ env.EVENT == 'push' }}
         run: echo "c'est un $EVENT"
