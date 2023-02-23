@@ -5,12 +5,15 @@ on:
 env:
   EVENT: ${{ github.event_name }}
 jobs:
-  job1:
+  job-push:
     runs-on: ubuntu-latest
     steps:
       - name: 'if-push'
         if: ${{ env.EVENT == 'push' }}
         run: echo "c'est un $EVENT"
+  job-pull:
+    runs-on: ubuntu-latest
+    steps:
       - name: 'if-pull_request'
         if: ${{ env.EVENT == 'pull_request' }}
         run: echo "c'est un $EVENT"
