@@ -1,0 +1,12 @@
+name: done-after-merge
+on:
+  workflow_run:
+    workflows: ["pull-request-done"]
+    types:
+      - completed
+jobs:
+  merge-done:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check
+        run: echo "The pull request was merged"
