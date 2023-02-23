@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
 env:
-  TRIGGER_EVENT: ${{github.event}}
+  TRIGGER_EVENT: github.event
 jobs:
   job1:
     runs-on: ubuntu-latest
