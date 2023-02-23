@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: check event
         run: echo github.event_name
+      -name: check event 2  
         run: echo "$EVENT"
       - name: if-push
         if: ${{ env.EVENT == 'push' }}
