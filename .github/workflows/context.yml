@@ -3,14 +3,14 @@ on:
   push:
   pull_request:
 env:
-  TRIGGER_EVENT: github.event_name
+  EVENT: github.event_name
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - name: if-push
-        if: ${{env.TRIGGER_EVENT == 'push'}}
-        run: echo "c'est un $TRIGGER_EVENT"
+        if: ${{ env.EVENT == 'push' }}
+        run: echo "c'est un $EVENT"
       - name: if-pull_request
-        if: ${{env.TRIGGER_EVENT == 'pull_request'}}
-        run: echo "c'est un $TRIGGER_EVENT"
+        if: ${{ env.EVENT == 'pull_request' }}
+        run: echo "c'est un $EVENT"
