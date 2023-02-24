@@ -4,10 +4,11 @@ jobs:
   matrix:
     strategy:
       fail-fast: true
+      max-parallel: 2
       matrix:
         names: [Pierre, Paul, Jacques]
         fruits: [Pomme, Banane, Poire, Peche]
     runs-on: ubuntu-latest
     steps:
       - name: message for each
-        run: echo " ${{matrix.names}} mange une ${{matrix.fruits}}, il adore ça !!!"    
+        run: echo " ${{matrix.names}} mange une ${{matrix.fruits}}, il adore ça !!!"
