@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: message for each
-        run: echo "${{matrix.name}} mange une ${{matrix.fruits}}, il adore ça !!!"    
+        run: echo " ${{matrix.name}} mange une ${{matrix.fruits}}, il adore ça !!!"    
